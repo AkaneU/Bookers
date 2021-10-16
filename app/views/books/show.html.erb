@@ -1,11 +1,17 @@
-<p>
-  Title:
+<% if flash[:notice] %>
+  <p class="success-update-creat">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
+<P>
+  <b>Title:</b>
   <%= @book.title %>
 </p>
 <p>
-  Body:
+  <b>Body:</b>
   <%= @book.body %>
 </p>
 
 <%= link_to "edit", edit_book_path(@book.id) %>
+|
 <%= link_to "back", books_path %>
